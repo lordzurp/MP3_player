@@ -1,29 +1,11 @@
-/*!
- *@file play.ino
- *@brief Music Playing Example Program 
- *@copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
- *@licence     The MIT License (MIT)
- *@author [fengli](li.feng@dfrobot.com)
- *@version  V1.0
- *@date  2020-12-02
- *@get from https://www.dfrobot.com
- *@https://github.com/DFRobot/DFRobot_PLAY
-*/
-
-
 #include <DFRobot_DF1201S.h>
 #include <SoftwareSerial.h>
 
 int sensorPin = A0;    // select the input pin for the potentiometer
-SoftwareSerial DF1201SSerial(D3, D4);  //RX  TX
+SoftwareSerial DF1201SSerial(D1, D2);  //RX  TX
 
 DFRobot_DF1201S DF1201S;
 void setup(void){
-/*  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(2000);                       // wait for a second
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(100);                       // wait for a second*/
   DF1201SSerial.begin(115200);
   while(!DF1201S.begin(DF1201SSerial)){
     delay(1000);
